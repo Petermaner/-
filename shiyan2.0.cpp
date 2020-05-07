@@ -231,7 +231,7 @@ int main(){
 	bnode*T=new bnode;
 	bnode*T1=new bnode;
 	A1.super(T1);
-	//输入为：A B D # G # # C E # #  F # # #（先序） 
+	//输入为：A B D # G # # # C E # #  F # # （先序） 
 	A.createbitree(T);cout<<endl;
 	cout<<"先序遍历：";A.preorder(T);cout<<endl;
 	cout<<"中序遍历：";A.inorder(T);cout<<endl;
