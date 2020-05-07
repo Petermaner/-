@@ -244,4 +244,4 @@ int main(){
 	cout<<"交换左右孩子的值：";A.exchange(T);A.preorder(T);cout<<endl;
 	return 0;
 }
-```
+```cpp
