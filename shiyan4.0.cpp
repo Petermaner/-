@@ -92,4 +92,84 @@ int main(){
 	return 0;
 }
 
+
+
+#include<iostream>
+using namespace std;
+
+typedef char elementtype;
+typedef struct binode{
+	elementtype data;
+	struct binode* lchild,*rchild;
+}bnode;
+
+class bitree{
+	public:
+		bitree();
+		void  insert(bnode *T,bnode *s);
+		void creat_bst(bnode*&T);
+		void inorder(bnode*T);
+		void visit(bnode*T){cout<<T->data<<" ";}
+	private:
+		bnode* root; 
+		
+		
+};
+bitree::bitree(){
+	root=NULL;
+}
+/*
+void bitree::insert(bnode *& T, bnode *s){//  将s所指结点插入到以T为根指针的二叉排序树中
+        if ( T == NULL )        // T 为空时
+             T = s;                  // 新结点作为根结点
+        else if ( s->data < T->data ) 
+                insert( T -> lchild, s );
+    	else insert( T -> rchild, s );
+        } 
+*/
+void bitree::insert(bnode * T, bnode *s){   
+	bnode * p,*q;
+	if ( T == NULL )        // T 为空时
+        {T = s;  return;}
+       p=T;
+       while(p!=NULL)         // 寻找插入位置
+       { q=p;
+          if(s->data<p->data)    p=p->lchild;
+          else p=p->rchild;
+        }      
+        if(s->data<q->data)    q->lchild=s; // 插入结点
+        else  q->rchild=s;
+   }            
+		
+
+		        
+void bitree::creat_bst(bnode *&T){   // 接受读入数据，从空树开始构造二叉排序树
+        bnode *s;  int x;      
+	    T=NULL;
+        cin>>x;
+        while (x!=12345){
+           	s=new bnode;
+			s -> data=x; 
+            s -> lchild=NULL;
+			s -> rchild=NULL;
+            insert(T,s);
+            cin>>x;
+            }
+ }
+void bitree::inorder(bnode*T){
+	if(T!=NULL){
+		inorder(T->lchild);
+		visit(T);
+		inorder(T->rchild);
+	}
+}
+ 
+int main(){
+	bitree A;
+	bnode*T=new bnode;
+	A.creat_bst(T);
+	A.inorder(T);
+	
+	return 0;
+}
  
