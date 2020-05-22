@@ -48,3 +48,19 @@ u1 : h_adder port map(a=>ain,b=>bin,co=>d,so=>e);
 u2 : h_adder port map(a=>e,b=>cin,co=>f,so=>sum);
 u3 : myor2 port map(a=>d,b=>f,y=>cout);
 end one;
+
+	
+	
+library ieee;
+use ieee.std_logic_1164.all;
+entity mux21 is
+	port(A,B,S:in std_logic;
+	    Y:out std_logic);
+end entity mux21;
+architecture one of mux21 is
+	signal temp1,temp2:std_logic;
+begin
+	temp1<=A and S;
+	temp2=(not B) nand S;
+        Y=temp1 or temp2;
+end architecture one;         
