@@ -93,7 +93,7 @@ void yima(){
     		//cout<<endl<<"倍数是啥："<<beishu<<" "<<char(int('f')-beishu);
     		cout<<char(int('f')-beishu);
     	 	low-=(pow(0.1,n)*pow(0.02,m))*(beishu+0.4);  //分界线左边 
-		    i++;
+		    i++;  //i计数器，看译码出来多少位了。不要译多。
 
 		}	
 	}
