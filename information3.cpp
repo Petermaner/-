@@ -64,8 +64,8 @@ void bianma(int codeall[][100], float t[], float length[], int& i) {
 
 	double code[10];
 	for (int j = 0; j <= i; j++) {
-		//	double code[j]=0.000001*low[j]+0.999999*high[j];
-		code[j] = high[j];
+                code[j]=0.000001*low[j]+0.999999*high[j];
+		
 		t[j] = ceil(log(1 / (pow(0.1, n[j]) * pow(0.02, m[j]))) / log(2));   	//ceil向上取整，t为最少编码位数，香农
 	}
 
