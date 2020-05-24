@@ -41,7 +41,7 @@ void bianma(int codeall[][100], float t[], float length[], int& i) {
 		high[i] = low[i] + (pow(0.1, n[i]) * pow(0.02, m[i]));	//求high	 
 
 
-		if (x == ' ') {
+		if (x == ' ') {   //有一个空格，增加一个组别，分组用
 			i++;
 		}
 		x = getchar();
