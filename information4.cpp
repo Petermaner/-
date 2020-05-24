@@ -201,7 +201,7 @@ void yima() {
 		code = code + ((int)(codeall[i]) - 48) * pow(2, (-(i + 1)));
 	}
 	cout << "转换回十进制的值为 :" << setprecision(10) << code << endl;
-	for (i = 0; i < len; i++) {		 //对应区间译码
+	for (i = 0; i < len; i++) {		 //对应区间译码  //第一个直接if判断找出a,b,c
 		if (i == 0) {
 			if (code >= 0 && code < pro1) {
 				cout << letter[0];
@@ -226,7 +226,7 @@ void yima() {
 			}
 			start = low;
 		}
-		else if (i == 1) {
+		else if (i == 1) {      //这里因为概率不确定，这里选择穷举遍历（暴力匹配）来找
 			for (int j = 0; j < 3; j++) {
 				high = start + pro22[k1][j + 1] * pro;
 				low = start + pro * pro22[k1][j];
@@ -239,7 +239,7 @@ void yima() {
 				}
 			}
 		}
-		else {
+		else {                 //位数多了，基本都是在走这一步，算法原理同上
 			for (int j = 0; j < 3; j++) {
 				high = start + pro33[k1][k2][j + 1] * pro;
 				low = start + pro * pro33[k1][k2][j];
