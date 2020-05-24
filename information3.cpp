@@ -20,7 +20,7 @@
 using namespace std;    //三个全局变量 
 int codeall[10][100] = { {0} };   //存储编码结果的数组 
 float t[10], length[10];         // t是编码后码长，length是输入码长(abc ->3) 
-int i = 0; //无敌的计数器i，万象矩阵 (一共有i+1组，注意)
+int i = 0; //无敌的计数器i，万象矩阵 (注意1、一共有i+1组 2、i也是一个全局变量，引用传递来修改)
 
 //double Q=(pow(0.1,n)*pow(0.02,m)); //总的概率，就是区间长度！一切基于次式 
 void bianma(int codeall[][100], float t[], float length[], int& i) {
